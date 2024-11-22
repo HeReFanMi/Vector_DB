@@ -1,0 +1,12 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:15  # Specify PostgreSQL version 15
+    container_name: database-container
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: postgres
+    volumes:
+      - ./data:/var/lib/postgresql/data
